@@ -264,29 +264,15 @@
       border: 1px solid rgba(199, 125, 99, 0.14);
     }
 
-    .portrait-placeholder {
+    .portrait {
       min-height: 420px;
       border-radius: 26px;
       background:
-        linear-gradient(145deg, rgba(143, 79, 63, 0.14), rgba(255, 244, 236, 0.75)),
+        linear-gradient(145deg, rgba(143, 79, 63, 0.08), rgba(255, 244, 236, 0.25)),
         url('images/njeri-portrait.png');
       background-size: cover;
       background-position: center;
-      display: flex;
-      align-items: flex-end;
       overflow: hidden;
-    }
-
-    .photo-note {
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(45, 36, 32, 0.74), transparent);
-      color: white;
-    }
-
-    .photo-note strong {
-      display: block;
-      font-size: 1.1rem;
     }
 
     section {
@@ -294,7 +280,7 @@
     }
 
     .section-heading {
-      max-width: 720px;
+      max-width: 760px;
       margin-bottom: 38px;
     }
 
@@ -322,6 +308,10 @@
       padding: 30px;
       box-shadow: 0 14px 32px rgba(80, 50, 40, 0.08);
       border: 1px solid rgba(199, 125, 99, 0.13);
+    }
+
+    .panel p {
+      color: var(--muted);
     }
 
     .stats {
@@ -385,70 +375,73 @@
       margin-bottom: 12px;
     }
 
-    .service-card p,
-    .project-card p,
-    .panel p {
+    .service-card p {
       color: var(--muted);
     }
 
-    .projects-grid {
+    .jw-project {
+      background: var(--white);
+      border-radius: 34px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(199, 125, 99, 0.13);
+    }
+
+    .jw-project-text {
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .jw-project-text h3 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 16px;
+    }
+
+    .jw-project-text p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .jw-video {
+      border-radius: 26px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      background: var(--cream);
+      box-shadow: 0 14px 32px rgba(80, 50, 40, 0.08);
+    }
+
+    .jw-video video {
+      width: 100%;
+      max-height: 620px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .jw-gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 14px;
     }
 
-    .project-card {
-      background: var(--white);
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid rgba(199, 125, 99, 0.13);
-      box-shadow: 0 12px 28px rgba(80, 50, 40, 0.07);
+    .jw-gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 22px rgba(80, 50, 40, 0.08);
+      transition: 0.25s ease;
     }
 
-    .project-image {
-      min-height: 210px;
-      background: linear-gradient(145deg, var(--soft), #fdf1ea);
-      display: grid;
-      place-items: center;
-      color: var(--accent-dark);
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-    }
-
-    .project-card:nth-child(1) .project-image {
-      background-image: linear-gradient(145deg, rgba(143, 79, 63, 0.14), rgba(255, 244, 236, 0.9)), url('images/project-1.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .project-card:nth-child(2) .project-image {
-      background-image: linear-gradient(145deg, rgba(143, 79, 63, 0.14), rgba(255, 244, 236, 0.9)), url('images/project-2.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .project-card:nth-child(3) .project-image {
-      background-image: linear-gradient(145deg, rgba(143, 79, 63, 0.14), rgba(255, 244, 236, 0.9)), url('images/project-3.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .project-content {
-      padding: 24px;
-    }
-
-    .project-content h3 {
-      font-size: 1.28rem;
-      margin-bottom: 10px;
+    .jw-gallery img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(80, 50, 40, 0.14);
     }
 
     .tag-list {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 16px;
+      margin-top: 18px;
     }
 
     .tag {
@@ -482,6 +475,7 @@
     }
 
     .experience-item p {
+      color: var(--muted);
       margin-top: 8px;
     }
 
@@ -514,6 +508,12 @@
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.18);
       font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .contact-links a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
 
     footer {
@@ -537,8 +537,7 @@
       .hero-grid,
       .about-grid,
       .contact-grid,
-      .services-grid,
-      .projects-grid {
+      .services-grid {
         grid-template-columns: 1fr;
       }
 
@@ -546,8 +545,16 @@
         padding-top: 58px;
       }
 
-      .portrait-placeholder {
+      .portrait {
         min-height: 340px;
+      }
+
+      .jw-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .jw-gallery img {
+        height: auto;
       }
     }
   </style>
@@ -559,6 +566,7 @@
     <span></span>
     <span></span>
   </div>
+
   <header>
     <div class="container nav">
       <a href="#home" class="logo">Joyce Njeri Thiong’o</a>
@@ -576,10 +584,10 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Content Creator • Ad Producer • Social Media Manager</span>
-          <h1>Visual stories that feel elegant, strategic, and memorable.</h1>
+          <span class="eyebrow">Content Creator • Producer • Social Media Manager</span>
+          <h1>Elegant visual stories for brands, hotels, and digital audiences.</h1>
           <p>
-            Joyce Njeri Thiong’o is a Nairobi-based Social Media Manager, Content Creator, and Digital Media Specialist focused on social media strategy, audience engagement, multimedia production, and brand visibility.
+            Joyce Njeri Thiong’o is a Nairobi-based creative producer, content creator, and digital media specialist focused on polished video production, social media storytelling, and brand visibility.
           </p>
           <div class="hero-actions">
             <a href="#work" class="btn btn-primary">View Work</a>
@@ -588,9 +596,7 @@
         </div>
 
         <div class="hero-card">
-          <div class="portrait-placeholder">
-            </div>
-          </div>
+          <div class="portrait" aria-label="Portrait of Joyce Njeri Thiong’o"></div>
         </div>
       </div>
     </section>
@@ -599,10 +605,6 @@
       <div class="container about-grid">
         <div class="stats">
           <div class="stat">
-            <strong>50%</strong>
-            <span>Follower growth contribution</span>
-          </div>
-          <div class="stat">
             <strong>Nairobi</strong>
             <span>Creative production base</span>
           </div>
@@ -610,21 +612,25 @@
             <strong>Media</strong>
             <span>Video, ads, social, storytelling</span>
           </div>
+          <div class="stat">
+            <strong>Strategy</strong>
+            <span>Content planning and audience engagement</span>
+          </div>
         </div>
 
         <div class="panel">
           <div class="section-heading">
             <h2>About Joyce</h2>
             <p>
-              Joyce creates polished multimedia content designed to connect with audiences and strengthen brand presence.
+              Joyce creates refined multimedia content that helps brands connect with audiences through clear visuals, thoughtful production, and consistent messaging.
             </p>
           </div>
           <p>
-            With a Bachelor of Arts in Communication and Journalism from St. Paul’s University, Joyce brings a thoughtful balance of media training, creativity, and digital strategy to each project. Her work includes developing campaigns, managing brand engagement, producing multimedia content, editing videos, and using analytics to improve performance.
+            With a Bachelor of Arts in Communication and Journalism from St. Paul’s University, Joyce brings a strong mix of media training, creative direction, digital strategy, and production experience to each project.
           </p>
           <br>
           <p>
-            She has professional experience supporting brand growth across Instagram, Facebook, and TikTok, including creating and scheduling multimedia content, monitoring campaign performance, responding to audience interactions, and maintaining consistent brand messaging.
+            Her work includes developing social media campaigns, producing visual content, supporting brand engagement, editing videos, monitoring performance, and creating content that feels polished, intentional, and audience-focused.
           </p>
         </div>
       </div>
@@ -634,26 +640,26 @@
       <div class="container">
         <div class="section-heading">
           <h2>Creative Services</h2>
-          <p>Professional support for brands that need clear strategy, polished visuals, consistent messaging, and content that feels intentional.</p>
+          <p>Professional creative support for brands that need polished visuals, consistent messaging, and content built for digital audiences.</p>
         </div>
 
         <div class="services-grid">
           <article class="service-card">
             <div class="icon">🎥</div>
             <h3>Video Production</h3>
-            <p>Planning, filming, editing, and producing polished video content for ads, campaigns, social media, and digital platforms using tools such as CapCut and Adobe Premiere Pro.</p>
+            <p>Planning, producing, filming, and editing video content for ads, campaigns, hospitality brands, social media, and digital platforms.</p>
           </article>
 
           <article class="service-card">
             <div class="icon">📱</div>
             <h3>Social Media Management</h3>
-            <p>Creating, scheduling, and managing content across Instagram, Facebook, and TikTok to support brand consistency, audience engagement, and online visibility.</p>
+            <p>Creating, scheduling, and managing content across Instagram, Facebook, and TikTok to support brand consistency and audience engagement.</p>
           </article>
 
           <article class="service-card">
             <div class="icon">✨</div>
             <h3>Brand Storytelling</h3>
-            <p>Developing visual narratives, captions, campaign ideas, and digital messaging that communicate a brand’s personality in a clear and memorable way.</p>
+            <p>Developing visual narratives, captions, campaign concepts, and digital messaging that communicate a brand’s personality with clarity and style.</p>
           </article>
         </div>
       </div>
@@ -663,49 +669,48 @@
       <div class="container">
         <div class="section-heading">
           <h2>Featured Work</h2>
-          <p>Add Joyce’s videos, campaign screenshots, hotel ads, Instagram posts, or production stills here.</p>
+          <p>A highlighted production project showcasing Joyce’s work as a producer and visual storyteller.</p>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-image">Project Image</div>
-            <div class="project-content">
-              <h3>Brand Visibility Campaign</h3>
-              <p>Developed and supported social media campaigns designed to increase brand visibility, improve engagement, and strengthen customer connection.</p>
-              <div class="tag-list">
-                <span class="tag">Video</span>
-                <span class="tag">Hospitality</span>
-                <span class="tag">Ad Production</span>
-              </div>
-            </div>
-          </article>
+        <article class="jw-project">
+          <div class="jw-project-text">
+            <span class="eyebrow">JW Marriott Nairobi • May 2026</span>
+            <h3>JW Marriott Nairobi Production Project</h3>
+            <p>
+              In May 2026, Joyce produced a visual scene at JW Marriott in Nairobi, capturing the hotel’s elegance, luxury atmosphere, and refined design through a polished creative production.
+            </p>
+            <p>
+              The hotel is a beautiful space, and Joyce’s production helped bring that beauty to an internet audience through thoughtful scene direction, behind-the-scenes storytelling, and strong visual presentation.
+            </p>
+            <p>
+              The photos below are stills from the behind-the-scenes moments of the project, showing the creative process behind the final production.
+            </p>
 
-          <article class="project-card">
-            <div class="project-image">Project Image</div>
-            <div class="project-content">
-              <h3>Social Media Growth Project</h3>
-              <p>Created, curated, and scheduled multimedia content and advertisements, contributing to increased follower growth and stronger audience engagement.</p>
-              <div class="tag-list">
-                <span class="tag">Instagram</span>
-                <span class="tag">Content Strategy</span>
-                <span class="tag">Community</span>
-              </div>
+            <div class="tag-list">
+              <span class="tag">Producer</span>
+              <span class="tag">JW Marriott Nairobi</span>
+              <span class="tag">Behind the Scenes</span>
+              <span class="tag">Hospitality</span>
+              <span class="tag">Video Production</span>
             </div>
-          </article>
+          </div>
 
-          <article class="project-card">
-            <div class="project-image">Project Image</div>
-            <div class="project-content">
-              <h3>Campus Media Production</h3>
-              <p>Produced and edited social media videos, campus radio segments, podcast content, and photography projects for university media platforms.</p>
-              <div class="tag-list">
-                <span class="tag">Commercial</span>
-                <span class="tag">Creative Direction</span>
-                <span class="tag">Editing</span>
-              </div>
-            </div>
-          </article>
-        </div>
+          <div class="jw-video">
+            <video controls muted playsinline>
+              <source src="video/VIDEO1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="jw-gallery" aria-label="Behind the scenes stills from JW Marriott Nairobi production">
+            <img src="images/1.jpeg" alt="Behind the scenes still from JW Marriott Nairobi production">
+            <img src="images/2.jpeg" alt="Behind the scenes still from JW Marriott Nairobi production">
+            <img src="images/3.jpeg" alt="Behind the scenes still from JW Marriott Nairobi production">
+            <img src="images/4.jpeg" alt="Behind the scenes still from JW Marriott Nairobi production">
+            <img src="images/5.jpeg" alt="Behind the scenes still from JW Marriott Nairobi production">
+            <img src="images/6.jpeg" alt="Behind the scenes still from JW Marriott Nairobi production">
+          </div>
+        </article>
       </div>
     </section>
 
@@ -724,9 +729,9 @@
           </div>
 
           <div class="experience-item">
-            <span>6 Months</span>
-            <h3>Content Creator Volunteer | St. Paul’s University, Nairobi</h3>
-            <p>Assisted in producing weekly campus radio segments and podcast content, edited social media videos, and contributed photography and creative media for university platforms.</p>
+            <span>Content Creation</span>
+            <h3>Creative Production & Digital Media</h3>
+            <p>Produced video content, supported visual storytelling, edited media for online platforms, and helped brands present their work in a polished and engaging way.</p>
           </div>
 
           <div class="experience-item">
@@ -742,22 +747,20 @@
       <div class="container contact-grid">
         <div class="contact-card">
           <h2>Let’s create something beautiful.</h2>
-          <p>For collaborations, content production, social media work, or brand storytelling projects, contact Joyce directly.</p>
+          <p>For collaborations, content production, social media work, hospitality campaigns, or brand storytelling projects, contact Joyce directly.</p>
           <div class="contact-links">
             <a href="mailto:njerithiongo7@gmail.com">njerithiongo7@gmail.com</a>
-            <a href="https://instagram.com/yourusername" target="_blank" rel="noopener">Instagram: Add Joyce’s handle</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn Profile</a>
           </div>
         </div>
 
         <div class="panel">
-          <h3>Portfolio Notes</h3>
+          <h3>Creative Focus</h3>
           <p>
-             replace the sample project images inside an <strong>images</strong> folder and update the project descriptions with Joyce’s real work. Good items to add include ad videos, campaign screenshots, Instagram analytics, client logos, behind-the-scenes photos, and short case studies.
+            Joyce’s portfolio highlights production work, digital storytelling, social media strategy, and visual content designed to help brands look polished and memorable online.
           </p>
           <br>
           <p>
-            Suggested GitHub Pages files: <strong>index.html</strong> and an <strong>images</strong> folder containing joyce-main.jpg, project-1.jpg, project-2.jpg, and project-3.jpg.
+            Her work is especially suited for hospitality, lifestyle, brand campaigns, social media content, behind-the-scenes production, and short-form digital video.
           </p>
         </div>
       </div>
@@ -766,9 +769,10 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Joyce Njeri Thiong’o. Social Media Manager • Content Creator • Digital Media Specialist.</p>
+      <p>© 2026 Joyce Njeri Thiong’o. Producer • Content Creator • Digital Media Specialist.</p>
     </div>
   </footer>
+
   <script>
     const bg = document.querySelector('.interactive-bg');
 
